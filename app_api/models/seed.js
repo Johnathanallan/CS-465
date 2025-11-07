@@ -1,3 +1,6 @@
+
+//Had to change the code here to make it work instead of the code orginally provided in the pdf
+
 // app_server/models/seed.js
 const mongoose = require('./db');         // connects
 const Trip = require('./travlr');         // Mongoose model
@@ -20,7 +23,7 @@ const path = require('path');
     let data = JSON.parse(raw);
 
     // 2) Normalize shape to an array of trip objects
-    //    Handles: { "1": {...}, "2": {...} } OR { "trips": [ ... ] } OR [ ... ]
+    
     let trips = Array.isArray(data) ? data
               : Array.isArray(data.trips) ? data.trips
               : Object.values(data);
@@ -40,7 +43,7 @@ const path = require('path');
     // 4) Sanity log so you can see what’s going in
     console.log('Seed preview:', { count: trips.length, first: trips[0] });
 
-    // 5) Validate before insert (optional but helpful)
+    // 5) Validate before insert 
     trips.forEach((doc, i) => {
       ['code','name','length','start','resort','perPerson','image','description'].forEach(k => {
         if (doc[k] === undefined) throw new Error(`Trip[${i}] missing required field: ${k}`);
