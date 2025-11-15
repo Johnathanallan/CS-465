@@ -1,12 +1,15 @@
-const express = require('express');
-const router = express.Router();
+// app_api/routes/index.js
+const express  = require('express');
+const router   = express.Router();
+const tripCtrl = require('../controllers/trips');
 
-const tripsController = require('../controllers/trips');
+router.route('/trips')
+  .get(tripCtrl.tripsList)
+  .post(tripCtrl.tripsAdd);
 
-// GET /api/trips  -> list all trips
-router.get('/trips', tripsController.tripsList);
-
-// GET /api/trips/:tripCode -> single trip by code
-router.get('/trips/:tripCode', tripsController.tripsFindByCode);
+router.route('/trips/:tripCode')
+  .get(tripCtrl.tripsFindByCode)
+  .put(tripCtrl.tripsUpdateTrip)
+  .delete(tripCtrl.tripsDelete); 
 
 module.exports = router;

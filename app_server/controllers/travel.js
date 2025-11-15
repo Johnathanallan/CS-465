@@ -30,7 +30,7 @@ const travel = async (req, res, next) => {
 };
 
 module.exports = {
-  travel
+  travel,
 };
 
 
