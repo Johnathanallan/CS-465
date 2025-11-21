@@ -2,8 +2,9 @@ import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {Router} from '@angular/router';
 import { Trip } from '../models/trip';
+import { Authentication } from '../services/authentication';
 
-
+// Trip Card component to display individual trip details
 @Component({
   selector: 'app-trip-card',
   standalone: true,
@@ -11,12 +12,18 @@ import { Trip } from '../models/trip';
   templateUrl: './trip-card.html',
   styleUrls: ['./trip-card.css'],
 })
+
+// TripCard class definition
 export class TripCard implements OnInit {
   @Input('trip') trip: any;
 
-  constructor (private router: Router) {}
+  constructor (private router: Router,private authenticationService: Authentication) {}
   
   ngOnInit(): void {}
+
+  public isLoggedIn(){
+     return this.authenticationService.isLoggedIn();
+  }
 
   public editTrip(trip: Trip) {
     localStorage.removeItem('tripCode');

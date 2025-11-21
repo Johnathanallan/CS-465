@@ -1,19 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddTrip } from './add-trip';
+import { Navbar } from './navbar';
 
-// Unit tests for AddTrip component
-describe('AddTrip', () => {
-  let component: AddTrip;
-  let fixture: ComponentFixture<AddTrip>;
+describe('Navbar', () => {
+  let component: Navbar;
+  let fixture: ComponentFixture<Navbar>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AddTrip]
+      imports: [Navbar]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AddTrip);
+    fixture = TestBed.createComponent(Navbar);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

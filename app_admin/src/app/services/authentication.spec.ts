@@ -1,14 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { TripData } from './trip-data';
+import { Authentication } from './authentication';
 
-// Unit tests for TripData service
-describe('TripData', () => {
-  let service: TripData;
+describe('Authentication', () => {
+  let service: Authentication;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(TripData);
+    service = TestBed.inject(Authentication);
   });
 
   it('should be created', () => {

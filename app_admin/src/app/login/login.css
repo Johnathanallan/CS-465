@@ -1,0 +1,33 @@
+.login-wrapper {
+  min-height: calc(100vh - 120px);
+  display: flex;
+  align-items: center;
+  padding: 2.5rem 0;
+}
+
+.card {
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  margin-top: 1rem;
+}
+
+.card-body {
+  padding: 1.75rem;
+}
+
+.form-label {
+  font-weight: 600;
+}
+
+.login-wrapper h2 {
+  margin-bottom: 0.75rem;
+}
+
+.login-wrapper p {
+  margin-bottom: 1.5rem;
+}
+
+.login-wrapper form .mb-3,
+.login-wrapper form .mb-4 {
+  margin-bottom: 1.25rem !important;
+}

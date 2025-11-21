@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from "@angula
 import { Router } from "@angular/router";
 import { TripData } from '../services/trip-data';
 
+// AddTrip component allows adding a new trip
 @Component({
   selector: 'app-add-trip',
   standalone: true,
@@ -11,7 +12,7 @@ import { TripData } from '../services/trip-data';
   templateUrl: './add-trip.html',
   styleUrls: ['./add-trip.css'],
 })
-
+// AddTrip class definition
 export class AddTrip implements OnInit {
 addForm!: FormGroup;
 submitted = false;
@@ -23,6 +24,7 @@ private tripService: TripData
 
 ) { }
 
+// Initialize the add trip form
 ngOnInit() {
 this.addForm = this.formBuilder.group({
 _id: [],
@@ -37,6 +39,7 @@ description: ['', Validators.required],
 })
 }
 
+// Handle form submission for adding a new trip
 public onSubmit() {
 this.submitted = true;
 if(this.addForm.valid){

@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 
 import { Trip } from '../models/trip';
 import { TripData } from '../services/trip-data';
-
+// EditTrip component allows editing of an existing trip
 @Component({
   selector: 'app-edit-trip',
   standalone: true,
@@ -19,6 +19,7 @@ import { TripData } from '../services/trip-data';
   templateUrl: './edit-trip.html',
   styleUrls: ['./edit-trip.css'],
 })
+// EditTrip class definition
 export class EditTrip implements OnInit {
   public editForm!: FormGroup;
   trip!: Trip;
@@ -39,6 +40,7 @@ export class EditTrip implements OnInit {
       return;
     }
 
+    // Initialize the edit form with empty/default values
     this.editForm = this.formBuilder.group({
       _id: [],
       code: [tripCode, Validators.required],
@@ -51,6 +53,7 @@ export class EditTrip implements OnInit {
       description: ['', Validators.required],
     });
 
+    // Fetch the trip data to populate the form
     this.tripDataService.getTrip(tripCode).subscribe({
       next: (value: any) => {
         const trip = Array.isArray(value) ? value[0] : value;
@@ -75,6 +78,7 @@ export class EditTrip implements OnInit {
     });
   }
 
+  // Handle form submission to update the trip
   public onSubmit(): void {
     this.submitted = true;
     if (!this.editForm.valid) return;

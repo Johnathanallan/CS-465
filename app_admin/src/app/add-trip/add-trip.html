@@ -1,6 +1,6 @@
 <div class="col-md-4">
   <h2 class="text-center">Add Trip</h2>
-
+<!-- Form to add a new trip -->
   <form *ngIf="addForm" [formGroup]="addForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label>Code:</label>
@@ -16,6 +16,7 @@
       </div>
     </div>
 
+    <!-- Input field for trip name -->
     <div class="form-group">
       <label>Name:</label>
       <input
@@ -30,6 +31,7 @@
       </div>
     </div>
 
+    <!-- Input field for trip length -->
     <div class="form-group">
       <label>Length:</label>
       <input
@@ -44,6 +46,7 @@
       </div>
     </div>
 
+    <!-- Input field for trip start date -->
     <div class="form-group">
       <label>Start:</label>
       <input
@@ -58,6 +61,7 @@
       </div>
     </div>
 
+    <!-- Input field for trip resort -->
     <div class="form-group">
       <label>Resort:</label>
       <input
@@ -72,6 +76,7 @@
       </div>
     </div>
 
+    <!-- Input field for per person cost -->
     <div class="form-group">
       <label>Per Person:</label>
       <input
@@ -86,6 +91,7 @@
       </div>
     </div>
 
+    <!-- Input field for image name -->
     <div class="form-group">
       <label>Image Name:</label>
       <input
@@ -100,6 +106,7 @@
       </div>
     </div>
 
+    <!-- Input field for trip description -->
     <div class="form-group">
       <label>Description:</label>
       <input
