@@ -4,6 +4,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { Authentication } from '../services/authentication';
 import { RouterModule } from '@angular/router';
 
+// Navbar component for navigation and authentication status display
 @Component({
   selector: 'app-navbar',
   standalone: true,
@@ -12,6 +13,7 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./navbar.css'],
 })
 
+// Navbar component for navigation and authentication status display
 export class NavbarComponent implements OnInit {
 constructor(
 private authenticationService: Authentication

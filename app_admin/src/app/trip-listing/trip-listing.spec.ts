@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TripListing } from './trip-listing';
-
+// Test suite for TripListing component
 describe('TripListing', () => {
   let component: TripListing;
   let fixture: ComponentFixture<TripListing>;

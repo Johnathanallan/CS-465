@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Authentication } from '../services/authentication';
 import { User } from '../models/user';
-
+// Login component for user authentication
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -13,6 +13,7 @@ import { User } from '../models/user';
   styleUrls: ['./login.css']
   
 })
+// LoginComponent class definition
 export class LoginComponent implements OnInit {
 
   public formError: string = '';
@@ -24,6 +25,7 @@ export class LoginComponent implements OnInit {
     password: ''
   };
 
+  // Constructor with injected services
   constructor(
     private router: Router,
     private authenticationService: Authentication
@@ -31,6 +33,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void { }
 
+  // Handle login form submission
   public onLoginSubmit(): void {
     this.formError = '';
 
@@ -45,6 +48,7 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  // Perform login operation
   private doLogin(): void {
     const newUser = {
       name: this.credentials.name,

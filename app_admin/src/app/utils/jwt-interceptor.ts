@@ -5,12 +5,14 @@ import { HttpInterceptor, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Authentication } from '../services/authentication';
 
+// JWT Interceptor to add Authorization header to HTTP requests
 @Injectable()
 export class JwtInterceptor implements HttpInterceptor {
   constructor(
     private authenticationService: Authentication
     ) {}
 
+    // Intercept HTTP requests and add JWT token if available
     intercept(request: HttpRequest<any>, next: HttpHandler):
     Observable<HttpEvent<any>> {
     var isAuthAPI: boolean;

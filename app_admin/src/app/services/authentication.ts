@@ -71,9 +71,11 @@ export class Authentication {
     this.tripDataService.login(user, passwd).subscribe({
       next: (value: any) => {
         if (value) {
-          // console.log(value);
-          this.authResp = value;
-          this.saveToken(this.authResp.token);
+          const token = typeof value === 'string' ? value : value?.token;
+          if (token) {
+            this.authResp.token = token;
+            this.saveToken(token);
+          }
         }
       },
       error: (error: any) => {
@@ -86,15 +88,16 @@ export class Authentication {
   // tripDataService
   // Because that method returns an observable, we subscribe to the
   // result and only process when the Observable condition is satisfied
-  // Uncomment the two console.log messages for additional debugging
-  // information. 
+  
   public register(user: User, passwd: string): void {
     this.tripDataService.register(user, passwd).subscribe({
       next: (value: any) => {
         if (value) {
-          // console.log(value);
-          this.authResp = value;
-          this.saveToken(this.authResp.token);
+          const token = typeof value === 'string' ? value : value?.token;
+          if (token) {
+            this.authResp.token = token;
+            this.saveToken(token);
+          }
         }
       },
       error: (error: any) => {
